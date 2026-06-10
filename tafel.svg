@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 800 1850"
+     width="800mm" height="1850mm">
+
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap');
+    ]]></style>
+
+    <!-- Clip petal circles to inner border of Flower of Life -->
+    <clipPath id="fol-clip">
+      <circle cx="400" cy="290" r="118"/>
+    </clipPath>
+  </defs>
+
+  <!-- ======================================================= -->
+  <!-- BACKGROUND                                              -->
+  <!-- ======================================================= -->
+  <rect width="800" height="1850" fill="#F9F7F2"/>
+
+  <!-- Gold stripes top/bottom -->
+  <rect x="0" y="0" width="800" height="7" fill="#C9A84C"/>
+  <rect x="0" y="1843" width="800" height="7" fill="#C9A84C"/>
+
+  <!-- Inner gold border -->
+  <rect x="15" y="15" width="770" height="1820" fill="none" stroke="#C9A84C" stroke-width="1"/>
+
+
+  <!-- ======================================================= -->
+  <!-- LOGO — grow2gether                                      -->
+  <!-- ======================================================= -->
+  <text x="400" y="120" text-anchor="middle"
+        font-family="'Cinzel', 'Palatino Linotype', serif"
+        font-size="50" font-weight="700" letter-spacing="1">
+    <tspan fill="#3A3A3A">grow</tspan><tspan fill="#C9A84C">2</tspan><tspan fill="#3A3A3A">gether</tspan>
+  </text>
+
+  <!-- Underlines flanking the "2" -->
+  <line x1="28" y1="136" x2="350" y2="136" stroke="#C9A84C" stroke-width="2.5"/>
+  <line x1="450" y1="136" x2="772" y2="136" stroke="#C9A84C" stroke-width="2.5"/>
+
+
+  <!-- ======================================================= -->
+  <!-- FLOWER OF LIFE                                          -->
+  <!-- center (400,290) · petal-r=55 · outer rings r=120,130  -->
+  <!-- ======================================================= -->
+
+  <!-- Two outer concentric border rings -->
+  <circle cx="400" cy="290" r="130" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+  <circle cx="400" cy="290" r="120" fill="none" stroke="#C9A84C" stroke-width="1.3"/>
+
+  <!-- Petal circles — clipped inside inner ring -->
+  <g clip-path="url(#fol-clip)" fill="none" stroke="#C9A84C" stroke-width="1.1">
+    <!-- center -->
+    <circle cx="400"   cy="290"   r="55"/>
+    <!-- ring 1 (distance = r = 55) -->
+    <circle cx="455"   cy="290"   r="55"/>
+    <circle cx="427.5" cy="242.4" r="55"/>
+    <circle cx="372.5" cy="242.4" r="55"/>
+    <circle cx="345"   cy="290"   r="55"/>
+    <circle cx="372.5" cy="337.6" r="55"/>
+    <circle cx="427.5" cy="337.6" r="55"/>
+    <!-- ring 2a (distance = r√3 ≈ 95.3) -->
+    <circle cx="482.5" cy="242.4" r="55"/>
+    <circle cx="400"   cy="194.7" r="55"/>
+    <circle cx="317.5" cy="242.4" r="55"/>
+    <circle cx="317.5" cy="337.6" r="55"/>
+    <circle cx="400"   cy="385.3" r="55"/>
+    <circle cx="482.5" cy="337.6" r="55"/>
+    <!-- ring 2b (distance = 2r = 110) — partial petals at edge -->
+    <circle cx="510"   cy="290"   r="55"/>
+    <circle cx="455"   cy="194.7" r="55"/>
+    <circle cx="345"   cy="194.7" r="55"/>
+    <circle cx="290"   cy="290"   r="55"/>
+    <circle cx="345"   cy="385.3" r="55"/>
+    <circle cx="455"   cy="385.3" r="55"/>
+  </g>
+
+
+  <!-- ======================================================= -->
+  <!-- TAGLINE                                                 -->
+  <!-- ======================================================= -->
+  <text x="400" y="462" text-anchor="middle"
+        font-family="'Cormorant Garamond', Garamond, Georgia, serif"
+        font-size="15" font-weight="300" fill="#3A3A3A" letter-spacing="3">
+    ALLES FÜR DEINEN GROW-ERFOLG
+  </text>
+
+  <!-- Flanking decorative rules -->
+  <line x1="28"  y1="475" x2="210" y2="475" stroke="#C9A84C" stroke-width="0.7"/>
+  <line x1="590" y1="475" x2="772" y2="475" stroke="#C9A84C" stroke-width="0.7"/>
+
+
+  <!-- ======================================================= -->
+  <!-- CANNABIS LEAF — botanical line illustration             -->
+  <!-- center (400,655) · scale 1.5                           -->
+  <!-- ======================================================= -->
+  <g transform="translate(400,660) scale(1.5)" fill="#3A3A3A" stroke="none">
+    <!-- central blade — straight up -->
+    <path d="M0,0 C-10,-33,-10,-66,0,-105 C10,-66,10,-33,0,0"/>
+    <!-- blade pair ±35° -->
+    <path d="M0,0 C-9,-28,-9,-56,0,-90  C9,-56, 9,-28,0,0" transform="rotate( 35,0,0)"/>
+    <path d="M0,0 C-9,-28,-9,-56,0,-90  C9,-56, 9,-28,0,0" transform="rotate(-35,0,0)"/>
+    <!-- blade pair ±65° -->
+    <path d="M0,0 C-7,-22,-7,-44,0,-72  C7,-44, 7,-22,0,0" transform="rotate( 65,0,0)"/>
+    <path d="M0,0 C-7,-22,-7,-44,0,-72  C7,-44, 7,-22,0,0" transform="rotate(-65,0,0)"/>
+    <!-- blade pair ±95° -->
+    <path d="M0,0 C-5,-16,-5,-32,0,-54  C5,-32, 5,-16,0,0" transform="rotate( 95,0,0)"/>
+    <path d="M0,0 C-5,-16,-5,-32,0,-54  C5,-32, 5,-16,0,0" transform="rotate(-95,0,0)"/>
+    <!-- petiole (stem) -->
+    <rect x="-2.5" y="0" width="5" height="33" rx="2"/>
+  </g>
+
+
+  <!-- ======================================================= -->
+  <!-- ÖFFNUNGSZEITEN                                          -->
+  <!-- ======================================================= -->
+  <text x="400" y="803" text-anchor="middle"
+        font-family="'Cinzel', serif" font-size="11" font-weight="400"
+        fill="#C9A84C" letter-spacing="5">ÖFFNUNGSZEITEN</text>
+
+  <line x1="80" y1="818" x2="720" y2="818" stroke="#C9A84C" stroke-width="0.8"/>
+
+  <!-- Mo – Fr -->
+  <text x="90" y="882"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="30" font-weight="400" fill="#3A3A3A">Mo – Fr</text>
+  <text x="710" y="882" text-anchor="end"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="30" font-weight="600" fill="#3A3A3A">11:00 – 18:00 Uhr</text>
+
+  <!-- Samstag -->
+  <text x="90" y="942"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="30" font-weight="400" fill="#3A3A3A">Samstag</text>
+  <text x="710" y="942" text-anchor="end"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="30" font-weight="600" fill="#3A3A3A">11:00 – 17:00 Uhr</text>
+
+  <line x1="80" y1="962" x2="720" y2="962" stroke="#C9A84C" stroke-width="0.8"/>
+
+  <!-- Small ornament -->
+  <text x="400" y="1000" text-anchor="middle" font-size="14" fill="#C9A84C">✦</text>
+
+
+  <!-- ======================================================= -->
+  <!-- WEBSITE + QR-CODE                                       -->
+  <!-- ======================================================= -->
+  <text x="400" y="1078" text-anchor="middle"
+        font-family="'Cinzel', serif" font-size="22" font-weight="700"
+        fill="#C9A84C" letter-spacing="1">www.grow2gether.at</text>
+
+  <!-- QR code box (200×200 mm, centered) -->
+  <rect x="300" y="1108" width="200" height="200" rx="4"
+        fill="white" stroke="#C9A84C" stroke-width="1.5"/>
+  <image x="306" y="1114" width="188" height="188"
+         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AQMAAADxGE3JAAAABlBMVEX59/I6OjqL2MTyAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACBElEQVR4nO3bPXLCMBCG4c2koPQRfBSOZh+No/gIlC6YKLG02pUFISRFbMH7FZB49ajcsX4QefF0ocpclz7swXs9NuDxePyW3utfOS5+WD5COC8fntPix2Jsh8fj8c37Po24qBc5WGud5G3tD/ovHo/HP6H3/lmWBI/H43fvvf/Zu9773/onHo/H79x7tH8Gozp1+N36GY/H41vwVar9v7j+nax/VsHj8fjt/O3El7xz+tv37x4PHo/H79+X/TOuf2O8f5ali7bWIZXOeDwe37KP6Zch3h8HY9o/9f1R1Mfg8Xj8xl7PL+ImXlzfxnp+/1u+Yv0iRQZrjXg8Ht+yD7rJF2zQkEqS9v/Eps4Z07MOj8fjW/bV/t7R+me5NJ5SKej9ldFKeDwev533QadikZtL9mqYc2f/D4/H41vzsZ7f/47L97g8+e78IqZaP+PxeHzT3vunmNfSVPTPPL+tn/F4PH5r7xnF04frjKJbd4LH4/Ht+lvRSyp+PjEVrTUf7eLxeHzj3vf/NLP5mNg//fdnd84/8Hg8/r/96nzCz2/X699b/a/D4/H45n2fuuFF/ZBaoxT3j1cZM8Xj8fin87Odz14d7R50Em24eDwevy/v9er+XYzWH+ifeDwev3PvKX1nk8j6avJP62c8Ho9vw1eZy0H6bEpT+/3jHDwej2/Xv3g+Af/BpZyo0Mp6AAAAAElFTkSuQmCC"/>
+
+  <text x="400" y="1342" text-anchor="middle"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="11" fill="#999" letter-spacing="2">QR-Code scannen · linktr.ee/grow2gether.at</text>
+
+
+  <!-- ======================================================= -->
+  <!-- PRODUCT CATEGORIES (subtle footer note)                 -->
+  <!-- ======================================================= -->
+  <line x1="160" y1="1430" x2="640" y2="1430" stroke="#C9A84C" stroke-width="0.6"/>
+
+  <text x="400" y="1474" text-anchor="middle"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="12" font-weight="300" fill="#888" letter-spacing="3">
+    Samen · Beleuchtung · Dünger · Growzelte · Beratung
+  </text>
+
+  <line x1="160" y1="1498" x2="640" y2="1498" stroke="#C9A84C" stroke-width="0.6"/>
+
+
+  <!-- ======================================================= -->
+  <!-- HAVE A NICE DAY  +  small Flower of Life icon           -->
+  <!-- ======================================================= -->
+
+  <!-- Miniature Flower of Life at (400, 1570) r=26 -->
+  <g transform="translate(400,1570)" fill="none" stroke="#C9A84C">
+    <circle cx="0"   cy="0"    r="30"   stroke-width="1.4"/>
+    <circle cx="0"   cy="0"    r="27"   stroke-width="0.9"/>
+    <!-- 7 inner circles (center + 6 at r=13.5) -->
+    <circle cx="0"   cy="0"    r="13.5" stroke-width="0.8"/>
+    <circle cx="13.5" cy="0"   r="13.5" stroke-width="0.8"/>
+    <circle cx="6.75" cy="-11.7" r="13.5" stroke-width="0.8"/>
+    <circle cx="-6.75" cy="-11.7" r="13.5" stroke-width="0.8"/>
+    <circle cx="-13.5" cy="0"  r="13.5" stroke-width="0.8"/>
+    <circle cx="-6.75" cy="11.7" r="13.5" stroke-width="0.8"/>
+    <circle cx="6.75" cy="11.7"  r="13.5" stroke-width="0.8"/>
+  </g>
+
+  <text x="400" y="1648" text-anchor="middle"
+        font-family="'Great Vibes', 'Brush Script MT', cursive"
+        font-size="34" fill="#C9A84C">have a nice day</text>
+
+  <line x1="220" y1="1674" x2="580" y2="1674" stroke="#C9A84C" stroke-width="0.7"/>
+
+</svg>
