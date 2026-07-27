@@ -1,4 +1,4 @@
-/* Shared print styles — A4 hospitality CV & cover letter */
+/* Shared print styles: A4 hospitality CV and cover letter */
 :root {
   --ink: #1a2332;
   --muted: #5a6578;
@@ -7,9 +7,10 @@
   --accent-soft: #e8f3f2;
   --sidebar-bg: #f4f7f7;
   --paper: #ffffff;
-  --name-size: 24pt;
-  --body: 8.6pt;
-  --small: 7.8pt;
+  --name-size: 22pt;
+  --body: 8.2pt;
+  --small: 7.4pt;
+  --section: 10pt;
 }
 
 * {
@@ -82,7 +83,7 @@ a {
   grid-template-columns: 58mm 1fr;
   background: linear-gradient(135deg, #143f3c 0%, var(--accent) 55%, #2a7a74 100%);
   color: #fff;
-  padding: 7mm 8mm 6mm;
+  padding: 5.5mm 8mm 5mm;
   gap: 5mm;
 }
 
@@ -100,8 +101,8 @@ a {
 }
 
 .cv-header .tagline {
-  margin-top: 1.5mm;
-  font-size: 8pt;
+  margin-top: 1.2mm;
+  font-size: 7.6pt;
   font-weight: 500;
   opacity: 0.92;
   letter-spacing: 0.05em;
@@ -109,7 +110,7 @@ a {
 }
 
 .cv-header .summary {
-  font-size: 8.2pt;
+  font-size: 8pt;
   line-height: 1.35;
   opacity: 0.95;
   align-self: end;
@@ -118,45 +119,65 @@ a {
 .cv-body {
   display: grid;
   grid-template-columns: 58mm 1fr;
-  height: calc(297mm - 38mm);
+  height: calc(297mm - 32mm);
   align-items: stretch;
 }
 
 .sidebar {
   background: var(--sidebar-bg);
-  padding: 5.5mm 5.5mm 6mm 7mm;
+  padding: 4.5mm 5mm 5mm 6.5mm;
   border-right: 1px solid var(--line);
 }
 
 .main {
-  padding: 5.5mm 8mm 6mm 6.5mm;
+  padding: 4.5mm 8mm 5mm 6.5mm;
+}
+
+.photo-wrap {
+  width: 100%;
+  margin: 0 0 4mm;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1.5px solid var(--accent);
+  background: #dfe8e7;
+  aspect-ratio: 4 / 5;
+  max-height: 42mm;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .side-block {
-  margin-bottom: 4.5mm;
+  margin-bottom: 3.6mm;
 }
 
 .side-block h2,
 .main h2 {
-  font-size: 7.4pt;
-  letter-spacing: 0.12em;
+  font-size: var(--section);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1.6mm;
-  font-weight: 700;
+  margin-bottom: 1.8mm;
+  font-weight: 800;
 }
 
 .side-block h2 {
-  padding-bottom: 1mm;
-  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 1.2mm;
+  border-bottom: 2px solid var(--accent);
 }
 
 .main h2 {
   display: flex;
   align-items: center;
   gap: 2.5mm;
-  margin-bottom: 2.5mm;
+  margin-bottom: 2.8mm;
   margin-top: 0.5mm;
+  font-size: 11.5pt;
 }
 
 .main h2 + .job,
@@ -165,14 +186,15 @@ a {
 }
 
 .main h2.edu-heading {
-  margin-top: 2mm;
+  margin-top: 2.5mm;
 }
 
 .main h2::after {
   content: "";
   flex: 1;
-  height: 1px;
-  background: var(--line);
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.35;
 }
 
 .contact-list,
@@ -184,13 +206,13 @@ a {
 .plain-list li {
   font-size: var(--small);
   line-height: 1.3;
-  margin-bottom: 1.4mm;
+  margin-bottom: 1.2mm;
   color: var(--ink);
 }
 
 .contact-list .label {
   display: block;
-  font-size: 6.5pt;
+  font-size: 6.3pt;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
@@ -204,23 +226,23 @@ a {
 }
 
 .chip {
-  font-size: 6.8pt;
+  font-size: 6.6pt;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 2px;
-  padding: 0.7mm 1.4mm;
+  padding: 0.6mm 1.3mm;
   color: var(--ink);
 }
 
 .skills-note {
   font-size: 7pt;
   color: var(--muted);
-  margin-top: 1.5mm;
+  margin-top: 1.4mm;
   line-height: 1.3;
 }
 
 .job {
-  margin-bottom: 3.4mm;
+  margin-bottom: 3mm;
 }
 
 .job-head {
@@ -231,34 +253,48 @@ a {
 }
 
 .job-title {
-  font-size: 9pt;
+  font-size: 8.8pt;
   font-weight: 700;
   color: var(--ink);
 }
 
 .job-dates {
-  font-size: 7.4pt;
+  font-size: 7.2pt;
   color: var(--muted);
   white-space: nowrap;
   font-weight: 600;
 }
 
 .job-meta {
-  font-size: 7.6pt;
+  font-size: 7.4pt;
   color: var(--accent);
-  margin: 0.4mm 0 1mm;
+  margin: 0.3mm 0 0.9mm;
   font-weight: 600;
 }
 
 .job ul {
-  padding-left: 3.5mm;
+  padding-left: 0;
+  list-style: none;
 }
 
 .job li {
   font-size: var(--body);
-  line-height: 1.32;
-  margin-bottom: 0.7mm;
+  line-height: 1.3;
+  margin-bottom: 0.55mm;
   color: var(--ink);
+  padding-left: 3.2mm;
+  position: relative;
+}
+
+.job li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 1.6mm;
+  height: 1.6mm;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .edu {
@@ -266,23 +302,14 @@ a {
 }
 
 .edu-title {
-  font-size: 8.6pt;
+  font-size: 8.4pt;
   font-weight: 700;
 }
 
 .edu-meta {
-  font-size: 7.5pt;
+  font-size: 7.3pt;
   color: var(--muted);
   margin-top: 0.3mm;
-}
-
-.availability {
-  margin-top: 2mm;
-  padding: 2mm 2.5mm;
-  background: var(--accent-soft);
-  border-left: 2.5px solid var(--accent);
-  font-size: 7.4pt;
-  line-height: 1.35;
 }
 
 /* ---------- Cover letter ---------- */
@@ -333,11 +360,11 @@ a {
 }
 
 .letter-body p {
-  font-size: 10.2pt;
-  line-height: 1.55;
-  margin-bottom: 3.8mm;
+  font-size: 10pt;
+  line-height: 1.52;
+  margin-bottom: 3.5mm;
   text-align: justify;
-  hyphens: auto;
+  hyphens: none;
 }
 
 .letter-body .closing {
