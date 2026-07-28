@@ -1,0 +1,387 @@
+/* Shared print styles: A4 hospitality CV and cover letter */
+:root {
+  --ink: #1a2332;
+  --muted: #5a6578;
+  --line: #d5dde8;
+  --accent: #1a5f5a;
+  --accent-soft: #e8f3f2;
+  --sidebar-bg: #f4f7f7;
+  --paper: #ffffff;
+  --name-size: 22pt;
+  --body: 8.2pt;
+  --small: 7.4pt;
+  --section: 10pt;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+html,
+body {
+  background: #e8ecef;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 12mm auto;
+  background: var(--paper);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.cv-page {
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  overflow: hidden;
+}
+
+@media print {
+  html,
+  body {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+  }
+
+  .cv-page {
+    height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ---------- CV layout ---------- */
+.cv-header {
+  display: grid;
+  grid-template-columns: 58mm 1fr;
+  background: linear-gradient(135deg, #143f3c 0%, var(--accent) 55%, #2a7a74 100%);
+  color: #fff;
+  padding: 5.5mm 8mm 5mm;
+  gap: 5mm;
+}
+
+.cv-header .brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cv-header h1 {
+  font-size: var(--name-size);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.cv-header .tagline {
+  margin-top: 1.2mm;
+  font-size: 7.6pt;
+  font-weight: 500;
+  opacity: 0.92;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cv-header .summary {
+  font-size: 8pt;
+  line-height: 1.35;
+  opacity: 0.95;
+  align-self: end;
+}
+
+.cv-body {
+  display: grid;
+  grid-template-columns: 58mm 1fr;
+  height: calc(297mm - 32mm);
+  align-items: stretch;
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  padding: 4.5mm 5mm 5mm 6.5mm;
+  border-right: 1px solid var(--line);
+}
+
+.main {
+  padding: 4.5mm 8mm 5mm 6.5mm;
+}
+
+.photo-wrap {
+  width: 100%;
+  margin: 0 0 3.2mm;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1.5px solid var(--accent);
+  background: #dfe8e7;
+  aspect-ratio: 4 / 5;
+  max-height: 38mm;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.side-block {
+  margin-bottom: 3mm;
+}
+
+.side-block h2,
+.main h2 {
+  font-size: var(--section);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.8mm;
+  font-weight: 800;
+}
+
+.side-block h2 {
+  padding-bottom: 1.2mm;
+  border-bottom: 2px solid var(--accent);
+}
+
+.main h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  margin-bottom: 2.8mm;
+  margin-top: 0.5mm;
+  font-size: 11.5pt;
+}
+
+.main h2 + .job,
+.main h2 + .edu {
+  margin-top: 0;
+}
+
+.main h2.edu-heading {
+  margin-top: 2.5mm;
+}
+
+.main h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.35;
+}
+
+.contact-list,
+.plain-list {
+  list-style: none;
+}
+
+.contact-list li,
+.plain-list li {
+  font-size: var(--small);
+  line-height: 1.3;
+  margin-bottom: 1.2mm;
+  color: var(--ink);
+}
+
+.contact-list .label {
+  display: block;
+  font-size: 6.3pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.2mm;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+}
+
+.chip {
+  font-size: 6.6pt;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.6mm 1.3mm;
+  color: var(--ink);
+}
+
+.skills-note {
+  font-size: 7pt;
+  color: var(--muted);
+  margin-top: 1.4mm;
+  line-height: 1.3;
+}
+
+.job {
+  margin-bottom: 2.6mm;
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2mm;
+}
+
+.job-title {
+  font-size: 8.8pt;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.job-dates {
+  font-size: 7.2pt;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.job-meta {
+  font-size: 7.4pt;
+  color: var(--accent);
+  margin: 0.3mm 0 0.9mm;
+  font-weight: 600;
+}
+
+.job ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.job li {
+  font-size: var(--body);
+  line-height: 1.3;
+  margin-bottom: 0.55mm;
+  color: var(--ink);
+  padding-left: 3.2mm;
+  position: relative;
+}
+
+.job li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 1.6mm;
+  height: 1.6mm;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.edu {
+  margin-bottom: 2mm;
+}
+
+.edu-title {
+  font-size: 8.4pt;
+  font-weight: 700;
+}
+
+.edu-meta {
+  font-size: 7.3pt;
+  color: var(--muted);
+  margin-top: 0.3mm;
+}
+
+/* ---------- Cover letter ---------- */
+.letter-page {
+  padding: 16mm 18mm 14mm;
+  min-height: 297mm;
+}
+
+.letter-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 5mm;
+  border-bottom: 2.5px solid var(--accent);
+  margin-bottom: 7mm;
+}
+
+.letter-top h1 {
+  font-size: 18pt;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.letter-top .role {
+  font-size: 9pt;
+  color: var(--muted);
+  margin-top: 1mm;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.letter-contact {
+  text-align: right;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.letter-meta {
+  font-size: 9.5pt;
+  line-height: 1.5;
+  margin-bottom: 6mm;
+  color: var(--ink);
+}
+
+.letter-meta strong {
+  color: var(--accent);
+}
+
+.letter-body p {
+  font-size: 10pt;
+  line-height: 1.52;
+  margin-bottom: 3.5mm;
+  text-align: justify;
+  hyphens: none;
+}
+
+.letter-body .closing {
+  margin-top: 5mm;
+  margin-bottom: 1mm;
+}
+
+.letter-body .sign {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 6mm;
+}
+
+.letter-body .sign-meta {
+  font-size: 8.5pt;
+  color: var(--muted);
+  margin-top: 1mm;
+  line-height: 1.45;
+}
